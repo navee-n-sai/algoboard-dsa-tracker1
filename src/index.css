@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface-950 text-slate-200 font-sans antialiased;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.08), transparent);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-blue-500/30 text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2e3d;
+  border-radius: 8px;
+  border: 2px solid #101014;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3d3d52;
+}
+
+/* Recharts dark polish */
+.recharts-default-tooltip {
+  border-radius: 10px !important;
+}
